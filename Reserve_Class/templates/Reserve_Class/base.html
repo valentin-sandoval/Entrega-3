@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} xxxxx {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'Reserve_Class/css/bootstrap.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Dropdown for Reserva -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkReserva" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Reservas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkReserva">
+                        <a class="dropdown-item" href="{% url 'Reserve_Class-list' %}">Todas las Reservas</a>
+                        <a class="dropdown-item" href="{% url 'yyy' %}">Crear Reserva</a>
+                        <a class="dropdown-item" href="{% url 'zzz' %}">Buscar Reserva por usuario</a>
+                    </div>
+                </li>
+                <!-- Dropdown for Clase -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkClase" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Clase
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkClase">
+                        <a class="dropdown-item" href="{% url 'clase-list' %}">Todas las Clase</a>
+                        <a class="dropdown-item" href="{% url 'clase-create' %}">Crear Clase</a>
+                        <a class="dropdown-item" href="{% url 'clase-search' %}">Buscar Clase</a>
+                    </div>
+                </li>
+                <!-- Dropdown for Clase (VBC)-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkClase" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Clases (VBC)
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkClase">
+                        <a class="dropdown-item" href="{% url 'vbc_clase_list' %}">Todas las Clase</a>
+                        <a class="dropdown-item" href="{% url 'vbc_clase_create' %}">Crear Clase</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <div class="container mt-4">
+        {% block content %}
+        <!-- Content goes here -->
+        {% endblock content %}
+    </div>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
