@@ -18,7 +18,8 @@ from .views import (
     ClaseDetailView,
     ClaseDeleteView,
     ClaseUpdateView,
-    ClaseCreateView
+    ClaseCreateView,
+    ClaseSearchView
 )
 
 
@@ -42,4 +43,5 @@ urlpatterns = [
     path('clase/vbc/<int:pk>/detail', ClaseDetailView.as_view(), name='vbc_clase_detail'),
     path('clase/vbc/<int:pk>/update/', ClaseUpdateView.as_view(), name='vbc_clase_update'),
     path('clase/vbc/<int:pk>/delete/', ClaseDeleteView.as_view(), name='vbc_clase_delete'),
+    path('clase/vbc/<int:pk>/search/', ClaseSearchView.as_view(), name='vbc_clase_search'),
 ]

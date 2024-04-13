@@ -114,7 +114,7 @@ def search_clase_view(request):
 
 
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, SearchView
 
 class ClaseListView(ListView):
     model = Clase
@@ -147,3 +147,8 @@ class ClaseDeleteView(DeleteView):
     model = Clase
     template_name = 'Reserve_Class/vbc/clase_confirm_delete.html'
     success_url = reverse_lazy('vbc_clase_list')
+
+class ClaseSearchView(SearchView):
+    model = Clase
+    template_name = 'Reserve_Class/vbc/clase_search.html'
+    success_url = reverse_lazy('vbc_clase_search')
